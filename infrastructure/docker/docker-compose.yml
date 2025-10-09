@@ -30,7 +30,7 @@ services:
       - "6379:6379"
 
   zookeeper:
-    image: bitnami/zookeeper:3
+    image: zookeeper:3.9.4
     container_name: oneworld-zookeeper
     restart: unless-stopped
     environment:
