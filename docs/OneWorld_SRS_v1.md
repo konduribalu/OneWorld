@@ -6,7 +6,7 @@
 
 ## 2. High-Level Architecture
 
-* **Frontend:** Angular shell + React/Angular micro frontends
+* **Frontend:** Angular shell + React/Angular/View micro frontends
 * **Backend:** Spring Boot, Node.js/Express
 * **AI Layer:** Python/Node.js microservices for content generation and moderation
 * **Databases:** PostgreSQL, MongoDB, Redis
