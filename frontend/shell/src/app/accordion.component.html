@@ -1,49 +1,116 @@
 <div class="shell-layout">
   <header class="top-bar">
-    <div class="logo">OneWorld</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search OneWorld..." />
-      <span class="search-icon">🔍</span>
+    <div class="logo-and-search">
+      <div class="logo">OneWorld</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search OneWorld..." />
+        <span class="search-icon">🔍</span>
+      </div>
     </div>
     <div class="user-info">
       <span class="user-avatar">👤</span>
       <span class="user-name">User</span>
     </div>
   </header>
-  <aside class="sidebar">
-    <nav>
-      <ul>
-        <li *ngFor="let section of sections" [class.active]="openSection === section.id" (click)="toggleSection(section.id)">
-          <span class="icon">{{ section.icon }}</span>
-          <span class="title">{{ section.title }}</span>
-        </li>
-      </ul>
-    </nav>
-  </aside>
-  <main class="main-content">
-    <div #mfeContainer class="mfe-container"></div>
-  </main>
-  <aside class="right-sidebar">
-    <div class="trending-card">
-      <h3>Trending Topics</h3>
-      <ul>
-        <li>#AI</li>
-        <li>#Jobs</li>
-        <li>#Tech</li>
-        <li>#Health</li>
-      </ul>
-    </div>
-    <div class="suggestion-card">
-      <h3>Suggestions</h3>
-      <ul>
-        <li>Connect with Jane Doe</li>
-        <li>Follow @TechGuru</li>
-        <li>Join Science Group</li>
-      </ul>
-    </div>
-    <div class="ad-card">
-      <h3>Sponsored</h3>
-      <p>Upgrade your skills with OneWorld Academy!</p>
-    </div>
-  </aside>
+  <div class="layout-row">
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="profile-avatar">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Photo" />
+        </div>
+        <div class="profile-info">
+          <div class="profile-name">John Smith</div>
+          <div class="profile-title">Product Manager</div>
+          <div class="profile-location">New York, NY</div>
+        </div>
+      </div>
+      <div class="analytics-card">
+        <h3>Analytics</h3>
+        <div class="analytics-metric">
+          <span class="metric-label">Posts</span>
+          <span class="metric-value">128</span>
+        </div>
+        <div class="analytics-metric">
+          <span class="metric-label">Followers</span>
+          <span class="metric-value">2,345</span>
+        </div>
+        <div class="analytics-metric">
+          <span class="metric-label">Views</span>
+          <span class="metric-value">18,900</span>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="post-mfe-card linkedin-post-composer">
+        <div class="composer-header">
+          <img class="composer-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" />
+          <input class="composer-input" type="text" placeholder="Start a post..." />
+        </div>
+        <div class="composer-actions">
+          <button class="composer-action"><span>📷</span> Photo</button>
+          <button class="composer-action"><span>🎥</span> Video</button>
+          <button class="composer-action"><span>📝</span> Write Article</button>
+        </div>
+      </div>
+      <div class="feed-mfe-card linkedin-feed">
+        <div class="feed-post-card">
+          <div class="feed-post-header">
+            <img class="feed-post-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" />
+            <div class="feed-post-info">
+              <div class="feed-post-name">John Smith</div>
+              <div class="feed-post-meta">Product Manager • 1h ago</div>
+            </div>
+          </div>
+          <div class="feed-post-content">
+            Excited to announce our new product launch! 🚀 #Tech #Innovation
+          </div>
+          <div class="feed-post-actions">
+            <button>👍 Like</button>
+            <button>💬 Comment</button>
+            <button>🔗 Share</button>
+          </div>
+        </div>
+        <div class="feed-post-card">
+          <div class="feed-post-header">
+            <img class="feed-post-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" />
+            <div class="feed-post-info">
+              <div class="feed-post-name">Jane Doe</div>
+              <div class="feed-post-meta">Software Engineer • 2h ago</div>
+            </div>
+          </div>
+          <div class="feed-post-content">
+            Just published a new article on scalable web apps. Check it out! #WebDev #Cloud
+          </div>
+          <div class="feed-post-actions">
+            <button>👍 Like</button>
+            <button>💬 Comment</button>
+            <button>🔗 Share</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <aside class="right-sidebar">
+      <div class="trending-card">
+        <h3>Trending Topics</h3>
+        <ul>
+          <li>#AI</li>
+          <li>#Jobs</li>
+          <li>#Tech</li>
+          <li>#Health</li>
+        </ul>
+      </div>
+      <div class="suggestion-card">
+        <h3>Suggestions</h3>
+        <ul>
+          <li>Connect with Jane Doe</li>
+          <li>Follow @TechGuru</li>
+          <li>Join Science Group</li>
+        </ul>
+      </div>
+      <div class="ad-card">
+        <h3>Sponsored</h3>
+        <p>Upgrade your skills with OneWorld Academy!</p>
+      </div>
+    </aside>
+  </div>
 </div>
