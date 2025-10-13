@@ -1,0 +1,49 @@
+<div class="shell-layout">
+  <header class="top-bar">
+    <div class="logo">OneWorld</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search OneWorld..." />
+      <span class="search-icon">🔍</span>
+    </div>
+    <div class="user-info">
+      <span class="user-avatar">👤</span>
+      <span class="user-name">User</span>
+    </div>
+  </header>
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li *ngFor="let section of sections" [class.active]="openSection === section.id" (click)="toggleSection(section.id)">
+          <span class="icon">{{ section.icon }}</span>
+          <span class="title">{{ section.title }}</span>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <div #mfeContainer class="mfe-container"></div>
+  </main>
+  <aside class="right-sidebar">
+    <div class="trending-card">
+      <h3>Trending Topics</h3>
+      <ul>
+        <li>#AI</li>
+        <li>#Jobs</li>
+        <li>#Tech</li>
+        <li>#Health</li>
+      </ul>
+    </div>
+    <div class="suggestion-card">
+      <h3>Suggestions</h3>
+      <ul>
+        <li>Connect with Jane Doe</li>
+        <li>Follow @TechGuru</li>
+        <li>Join Science Group</li>
+      </ul>
+    </div>
+    <div class="ad-card">
+      <h3>Sponsored</h3>
+      <p>Upgrade your skills with OneWorld Academy!</p>
+    </div>
+  </aside>
+</div>
