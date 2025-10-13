@@ -13,68 +13,62 @@
 * **Messaging/Event Streaming:** Kafka
 * **Cloud & Deployment:** AWS EKS, Kubernetes, Helm, Istio, Sidecar logging, HPA, Cluster Autoscaler
 
-## 3. Functional Requirements
+## 3. Functional Requirements (User-Centric)
 
 ### 3.1 User Management
 
-* Registration & login (JWT + OAuth2)
-* Profile management
-* Follow/unfollow functionality
-* AI-generated demo users (100) with categories and dummy email accounts
-* Password reset via email
+- Users can easily sign up and create their profiles.
+- Users can securely log in and reset their password if needed.
+- Users can view and update their profile information.
+- Users can follow or unfollow other users to curate their network.
+- Users see a variety of demo users and categories to help discover new connections.
 
-### 3.2 Post Service
+### 3.2 Posting & Sharing
 
-* Multi-category posts: Movies, Tech, Science, Jobs, Politics (non-controversial), Lifestyle, Health, Art
-* Like/unlike posts
-* Trending & recommended posts API
-* AI moderation to ensure safe content
+- Users can create and share posts in categories like Movies, Tech, Science, Jobs, Politics, Lifestyle, Health, and Art.
+- Users can like or unlike posts to show appreciation or interest.
+- Users can view trending and recommended posts tailored to their interests.
+- Users are protected from unsafe or abusive content through automatic moderation.
 
-### 3.3 Comment Service
+### 3.3 Commenting & Discussion
 
-* Add, edit, delete comments
-* Nested comment threading
-* Rate limiting to prevent spam
+- Users can add, edit, and delete comments on posts.
+- Users can reply to comments, creating threaded discussions.
+- Users are protected from spam through fair usage limits.
 
-### 3.4 Messaging Service
+### 3.4 Messaging & Chat
 
-* Real-time 1:1 and group chat using WebSockets
-* Persist messages in MongoDB
-* Typing indicators & message receipts
-* Offline message queue via Kafka
+- Users can chat in real time, both one-on-one and in groups.
+- Users can see when someone is typing and when their messages are delivered or read.
+- Users can continue conversations seamlessly, even if briefly offline.
 
-### 3.5 Feed Service
+### 3.5 Personalized Feed
 
-* Aggregated feed from followed users (AI + real)
-* Ranked by engagement, recency, AI personalization
-* Cached using Redis for performance
+- Users have a personalized feed that shows posts from people they follow and recommended content.
+- The feed is organized by engagement, freshness, and relevance to the user.
+- Users enjoy a smooth browsing experience with quick updates.
 
-### 3.6 Search Service
+### 3.6 Search & Discovery
 
-* Search posts, users, and hashtags
-* Semantic search with embeddings/vector database
-* Autocomplete & suggestions
+- Users can search for posts, other users, and hashtags using keywords.
+- Users receive smart suggestions and autocomplete as they type.
+- Users can discover relevant content using advanced search capabilities.
 
-### 3.7 Media Service
+### 3.7 Media Uploads
 
-* Upload, compression, thumbnail generation
-* Store media in AWS S3
-* Metadata in PostgreSQL
+- Users can upload photos and videos to their posts.
+- Users see optimized previews and thumbnails of their media.
+- Users’ media is safely stored and managed.
 
-### 3.8 AI Generation Service
+### 3.8 AI-Powered Content & Moderation
 
-* Generate safe AI users and posts
-* Diverse content per category
-* Timestamped post scheduling
-* Content moderation to prevent spam, abusive, or adult content
+- Users see diverse and relevant content generated and moderated by AI, ensuring a safe and enjoyable experience.
+- Users benefit from scheduled posts and content moderation that prevents spam and abuse.
 
-### 3.9 Analytics Service
+### 3.9 Analytics & Insights
 
-* Track engagement metrics: likes, comments, shares, follows
-* Post reach, trending content, DAU/MAU metrics
-* Retention and churn rates
-* AI-driven insights for trending content, top creators
-* Visual dashboards using Grafana/Superset
+- Users can view statistics about their activity, such as likes, comments, shares, and followers.
+- Users can explore trends, top creators, and engagement metrics through easy-to-understand dashboards.
 
 ## 4. Non-Functional Requirements
 
