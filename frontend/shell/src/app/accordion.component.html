@@ -4,7 +4,12 @@
       <div class="logo">OneWorld</div>
       <div class="search-bar">
         <input type="text" placeholder="Search OneWorld..." />
-        <span class="search-icon">🔍</span>
+        <span class="search-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-label="Search" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9" r="7" stroke="#888" stroke-width="2"/>
+            <line x1="14.5" y1="14.5" x2="18" y2="18" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
       </div>
     </div>
     <div class="user-info">
@@ -41,52 +46,9 @@
       </div>
     </aside>
     <main class="main-content">
-      <div class="post-mfe-card linkedin-post-composer">
-        <div class="composer-header">
-          <img class="composer-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" />
-          <input class="composer-input" type="text" placeholder="Start a post..." />
-        </div>
-        <div class="composer-actions">
-          <button class="composer-action"><span>📷</span> Photo</button>
-          <button class="composer-action"><span>🎥</span> Video</button>
-          <button class="composer-action"><span>📝</span> Write Article</button>
-        </div>
-      </div>
-      <div class="feed-mfe-card linkedin-feed">
-        <div class="feed-post-card">
-          <div class="feed-post-header">
-            <img class="feed-post-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" />
-            <div class="feed-post-info">
-              <div class="feed-post-name">John Smith</div>
-              <div class="feed-post-meta">Product Manager • 1h ago</div>
-            </div>
-          </div>
-          <div class="feed-post-content">
-            Excited to announce our new product launch! 🚀 #Tech #Innovation
-          </div>
-          <div class="feed-post-actions">
-            <button>👍 Like</button>
-            <button>💬 Comment</button>
-            <button>🔗 Share</button>
-          </div>
-        </div>
-        <div class="feed-post-card">
-          <div class="feed-post-header">
-            <img class="feed-post-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" />
-            <div class="feed-post-info">
-              <div class="feed-post-name">Jane Doe</div>
-              <div class="feed-post-meta">Software Engineer • 2h ago</div>
-            </div>
-          </div>
-          <div class="feed-post-content">
-            Just published a new article on scalable web apps. Check it out! #WebDev #Cloud
-          </div>
-          <div class="feed-post-actions">
-            <button>👍 Like</button>
-            <button>💬 Comment</button>
-            <button>🔗 Share</button>
-          </div>
-        </div>
+      <!-- Dynamic MFE mount point: the shell will inject the selected micro frontend here -->
+      <div id="mfe-container" #mfeContainer class="mfe-container" aria-live="polite">
+        <!-- Remote micro frontends (post-mfe, feed-mfe, etc.) will be inserted here at runtime -->
       </div>
     </main>
     <aside class="right-sidebar">

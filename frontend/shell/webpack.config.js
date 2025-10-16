@@ -3,7 +3,7 @@ const { withModuleFederationPlugin } = require('@angular-architects/module-feder
 module.exports = withModuleFederationPlugin({
   remotes: {
     'userMfe': 'userMfe@http://localhost:3001/remoteEntry.js',
-    'postMfe': 'postMfe@http://localhost:3002/remoteEntry.js',
+    'postMfe': 'postMfe@http://localhost:4302/remoteEntry.js',
     'feedMfe': 'feedMfe@http://localhost:3003/remoteEntry.js',
     'aiMfe': 'aiMfe@http://localhost:3004/remoteEntry.js',
     'searchMfe': 'searchMfe@http://localhost:3005/remoteEntry.js',
@@ -16,7 +16,7 @@ module.exports = withModuleFederationPlugin({
     '@angular/core': { singleton: true, strictVersion: true },
     '@angular/common': { singleton: true, strictVersion: true },
     '@angular/router': { singleton: true, strictVersion: true },
-    'react': { singleton: true, strictVersion: true },
-    'react-dom': { singleton: true, strictVersion: true }
+    'react': { singleton: true, eager: false, requiredVersion: false },
+    'react-dom': { singleton: true, eager: false, requiredVersion: false }
   }
 });
