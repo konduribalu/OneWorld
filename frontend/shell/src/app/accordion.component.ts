@@ -1,4 +1,6 @@
+// ...existing code...
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { CommonModule } from '@angular/common';
 
@@ -9,11 +11,19 @@ declare const __webpack_share_scopes__: any;
 @Component({
   selector: 'app-shell-layout',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss']
 })
 export class ShellLayoutComponent {
+  isLoginRoute = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.isLoginRoute = window.location.pathname === '/login';
+    });
+    this.isLoginRoute = window.location.pathname === '/login';
+  }
   sections = [
     { title: 'Feed', id: 'feed-mfe', icon: 'home', type: 'react', remoteEntry: 'http://localhost:4303/remoteEntry.js', element: 'feed-mfe' },
     { title: 'Search', id: 'search-mfe', icon: 'search', type: 'react', remoteEntry: 'http://localhost:4305/remoteEntry.js', element: 'search-mfe' },
@@ -29,9 +39,155 @@ export class ShellLayoutComponent {
   openSection: string = 'post-mfe';
 
   @ViewChild('mfeContainer', { static: false }) mfeContainer!: ElementRef;
+  @ViewChild('userMfeHost', { static: false }) userMfeHost!: ElementRef;
+  @ViewChild('userIconHost', { static: false }) userIconHost!: ElementRef;
 
   ngAfterViewInit() {
     this.loadSection(this.openSection);
+    // Mount the user avatar/profile in the sidebar and header
+    this.mountSidebarUserAvatar();
+    this.mountHeaderUserIcon();
+  }
+
+  /** Mount the user avatar/profile in the sidebar using userMfe.mountAvatar if available, else fallback. */
+  async mountSidebarUserAvatar() {
+    const userSection = this.sections.find(s => s.id === 'user-mfe');
+    if (!userSection || !this.userMfeHost || !this.userMfeHost.nativeElement) return;
+    const container = this.userMfeHost.nativeElement as HTMLElement;
+    // Show spinner while loading
+    container.innerHTML = '<div class="sidebar-spinner">Loading...</div>';
+    try {
+      await this.addScript(userSection.remoteEntry);
+      const bundleUrl = userSection.remoteEntry.replace(/remoteEntry\.js$/, 'bundle.js');
+      await this.addScript(bundleUrl).catch(() => {});
+      
+      // Wait for runtime API
+      const userApi = (window as any).userMfe;
+      
+      if (userApi && typeof userApi.mountAvatar === 'function') {
+        // Get current user from the API
+        const user = userApi.getCurrentUser();
+        
+        await userApi.mountAvatar(container, { 
+          user,
+          onClick: () => this.goToProfile()
+        });
+        return;
+      }
+      
+      // Final fallback: static UI
+      const user = { name: 'Guest User', title: 'Please log in', location: '' };
+      container.innerHTML = `<div class="profile-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Photo" /></div><div class="profile-info"><div class="profile-name">${user.name}</div><div class="profile-title">${user.title}</div></div>`;
+    } catch (err) {
+      container.innerHTML = '<div class="mfe-fallback">User info unavailable</div>';
+      console.warn('[Shell] sidebar user-mfe failed:', err);
+    }
+  }
+
+  /** Mount the user icon in the header */
+  async mountHeaderUserIcon() {
+    if (!this.userIconHost || !this.userIconHost.nativeElement) return;
+    const container = this.userIconHost.nativeElement as HTMLElement;
+    
+    try {
+      // Wait for userMfe API to be available
+      const userApi = (window as any).userMfe;
+      
+      if (userApi && typeof userApi.mountIcon === 'function') {
+        const user = userApi.getCurrentUser();
+        
+        await userApi.mountIcon(container, {
+          user,
+          onClick: () => this.goToProfile()
+        });
+      } else {
+        // Fallback: simple static UI
+        container.innerHTML = '<div style="cursor: pointer;" onclick="window.location.href=\'/profile\'"><span style="font-size: 24px;">👤</span></div>';
+      }
+    } catch (err) {
+      console.warn('[Shell] header user-mfe failed:', err);
+      container.innerHTML = '<div style="cursor: pointer;" onclick="window.location.href=\'/profile\'"><span style="font-size: 24px;">👤</span></div>';
+    }
+  }
+
+  goToProfile() {
+    // Navigate to profile route - the ProfileHostComponent will handle mounting
+    this.router.navigate(['/profile']);
+  }
+
+  onSidebarProfileClick() {
+    // Navigate to profile route - the ProfileHostComponent will handle mounting
+    this.router.navigate(['/profile']);
+  }
+
+  /** Mount the full user profile into the main mfeContainer using the user-mfe runtime API when possible. */
+  async mountUserProfile() {
+    // clear existing content and show a loading placeholder
+    try {
+      if (!this.mfeContainer || !this.mfeContainer.nativeElement) return;
+      this.clearMfe();
+      const container = this.mfeContainer.nativeElement as HTMLElement;
+      const loading = document.createElement('div');
+      loading.className = 'mfe-loading';
+      loading.textContent = 'Loading profile...';
+      container.appendChild(loading);
+
+      const userSection = this.sections.find(s => s.id === 'user-mfe');
+      if (!userSection) {
+        loading.textContent = 'Profile not available.';
+        return;
+      }
+
+      // Ensure remoteEntry is loaded so registration or runtime API becomes available
+      await this.addScript(userSection.remoteEntry).catch(() => {
+        // continue; registration may still happen via other script
+      });
+      const bundleUrl = userSection.remoteEntry.replace(/remoteEntry\.js$/, 'bundle.js');
+      await this.addScript(bundleUrl).catch(() => {});
+
+      // Prefer runtime API if present
+      const userApi = (window as any).userMfe;
+      if (userApi && typeof userApi.mountProfile === 'function') {
+        try {
+          // unmount will be handled by clearMfe or userApi.unmount
+          // remove loading indicator before mount
+          container.innerHTML = '';
+          await userApi.mountProfile(container, {});
+          return;
+        } catch (e) {
+          console.warn('[Shell] userMfe.mountProfile failed', e);
+        }
+      }
+
+      // Fallback: if custom element user-profile exists, create it
+      if (customElements.get('user-profile')) {
+        container.innerHTML = '';
+        const el = document.createElement('user-profile');
+        container.appendChild(el);
+        return;
+      }
+
+      // If registration function exists, call it then wait for element
+      const regFn = (window as any)['user-mfeRegister'];
+      if (typeof regFn === 'function') {
+        try { regFn(); } catch (e) { console.warn('[Shell] user-mfeRegister threw', e); }
+        const ok = await this.waitForCustomElement('user-profile', 3000);
+        if (ok) {
+          container.innerHTML = '';
+          container.appendChild(document.createElement('user-profile'));
+          return;
+        }
+      }
+
+      // Final fallback: show a friendly message
+      container.innerHTML = '';
+      const fallback = document.createElement('div');
+      fallback.className = 'mfe-fallback';
+      fallback.textContent = 'Profile is temporarily unavailable.';
+      container.appendChild(fallback);
+    } catch (err) {
+      console.error('[Shell] mountUserProfile error', err);
+    }
   }
 
   async toggleSection(id: string) {
@@ -182,6 +338,49 @@ export class ShellLayoutComponent {
       fallback.textContent = 'Failed to load remote: ' + (err && (err as Error).message ? (err as Error).message : String(err));
       this.mfeContainer.nativeElement.appendChild(fallback);
       console.error(`[MFE Loader] Critical error loading remote for ${section.id}:`, err);
+    }
+  }
+
+  /** Attempt to load and mount the standalone `user-mfe` microfrontend into the sidebar host. */
+  async loadUserMfe() {
+    const userSection = this.sections.find(s => s.id === 'user-mfe');
+    if (!userSection || !this.userMfeHost || !this.userMfeHost.nativeElement) return;
+    try {
+      // Load remoteEntry and bundle as done for other MFEs
+      await this.addScript(userSection.remoteEntry);
+      const bundleUrl = userSection.remoteEntry.replace(/remoteEntry\.js$/, 'bundle.js');
+      await this.addScript(bundleUrl).catch(() => {
+        // bundle may be optional; continue
+      });
+
+      // Give the remote some time to register its custom element via its bootstrap
+      await new Promise(resolve => setTimeout(resolve, 300));
+
+      // If a registration function exists, call it
+      const registerName = userSection.element + 'Register';
+      const regFn = (window as any)[registerName];
+      if (typeof regFn === 'function') {
+        try { regFn(); } catch (e) { console.warn('[Shell] user-mfe register failed', e); }
+      }
+
+      // Wait briefly for the custom element and then mount it replacing fallback
+      const elementName = userSection.element;
+      if (!elementName) {
+        console.warn('[Shell] userSection has no element name; cannot mount user-mfe');
+        return;
+      }
+      const registered = await this.waitForCustomElement(elementName, 3000);
+      if (registered) {
+        const el = document.createElement(elementName);
+        // clear fallback content
+        this.userMfeHost.nativeElement.innerHTML = '';
+        this.userMfeHost.nativeElement.appendChild(el);
+        console.log('[Shell] user-mfe mounted in sidebar');
+      } else {
+        console.warn('[Shell] user-mfe not registered; leaving fallback UI');
+      }
+    } catch (err) {
+      console.warn('[Shell] error loading user-mfe:', err);
     }
   }
 

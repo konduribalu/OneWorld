@@ -1,0 +1,205 @@
+/* 🔥 POST FEED STYLING - Step 1: Avatars & Text Areas 🔥 */
+
+/* Make all avatars circular and smaller */
+img[src*="avatar"], 
+img[src*="user"], 
+.composer-avatar,
+.post-card-avatar,
+.feed-post-avatar,
+img[width="48"],
+img[width="40"] {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Professional text areas with rounded corners */
+textarea,
+input[type="text"],
+input[type="email"],
+.composer-input,
+*[placeholder*="What's on your mind"],
+*[placeholder*="what's on your mind"] {
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Focus state for text areas */
+textarea:focus,
+input:focus,
+.composer-input:focus {
+    outline: none !important;
+    border-color: rgba(102, 126, 234, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Circular avatars with gradients - target all possible avatar selectors */
+.composer-avatar,
+.post-card-avatar,
+.feed-post-avatar,
+img[src*="avatar"],
+img[src*="user"],
+img[width="48"],
+img[width="40"],
+*[class*="avatar"] {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid transparent !important;
+    background: linear-gradient(45deg, #667eea, #764ba2) !important;
+    background-clip: padding-box !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Professional gradient background */
+.App {
+    min-height: 100vh !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+    background-attachment: fixed !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 2rem 1rem !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+}
+
+/* Modern glassmorphism cards */
+.post-composer {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 2rem !important;
+    margin-bottom: 2rem !important;
+    max-width: 600px !important;
+    width: 100% !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.post-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden !important;
+    margin-bottom: 2rem !important;
+}
+
+.post-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Professional input styling */
+.composer-input {
+    flex: 1 !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+    resize: vertical !important;
+    min-height: 80px !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(247, 250, 252, 0.9) 100%) !important;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease !important;
+    font-family: inherit !important;
+}
+
+.composer-input:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3), inset 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Gradient buttons */
+.composer-action.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-family: inherit !important;
+}
+
+.composer-action.primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5) !important;
+}
+
+/* Smooth animations */
+@keyframes fadeInApp {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+.App {
+    animation: fadeInApp 0.5s ease-in !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .composer-avatar {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    .post-card-avatar {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    .App {
+        padding: 1rem 0.5rem !important;
+    }
+    
+    .post-composer {
+        padding: 1.5rem !important;
+        border-radius: 12px !important;
+    }
+}
+
+/* Force styles using CSS injection */
+#mfe-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Universal avatar override */
+* img {
+    border-radius: 50% !important;
+}
+
+/* Force hide any titles in post feeds */
+* h1:contains("Post Feed"), * h2:contains("Post Feed"), * h3:contains("Post Feed") {
+    display: none !important;
+}

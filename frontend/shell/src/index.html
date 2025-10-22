@@ -6,6 +6,60 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    // 🔥 POST FEED STYLE INJECTOR 🔥
+    function injectPostFeedStyles() {
+        const existingStyle = document.getElementById('post-feed-force-styles');
+        if (existingStyle) existingStyle.remove();
+
+        const style = document.createElement('style');
+        style.id = 'post-feed-force-styles';
+        style.textContent = `
+            /* Force hide post feed titles */
+            *[id*="mfe"] h1, *[id*="mfe"] h2, *[id*="mfe"] h3,
+            *:contains("OneWorld Post Feed"), *:contains("Post Feed") {
+                display: none !important;
+            }
+            
+            /* Force gradient background on MFE container */
+            #mfe-container, .mfe-container {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+                min-height: 100vh !important;
+                padding: 2rem 1rem !important;
+            }
+            
+            /* Force circular avatars */
+            img[src*="avatar"], img[src*="user"], img[width="48"], img[width="40"],
+            *[class*="avatar"], .composer-avatar, .post-card-avatar, .feed-post-avatar {
+                width: 32px !important;
+                height: 32px !important;
+                border-radius: 50% !important;
+                object-fit: cover !important;
+                border: 2px solid transparent !important;
+                background: linear-gradient(45deg, #667eea, #764ba2) !important;
+                background-clip: padding-box !important;
+                box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+            }
+            
+            /* Professional cards */
+            *[class*="post-composer"], *[class*="post-card"] {
+                background: rgba(255, 255, 255, 0.95) !important;
+                backdrop-filter: blur(10px) !important;
+                border-radius: 16px !important;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                margin-bottom: 2rem !important;
+            }
+        `;
+        document.head.appendChild(style);
+        console.log('✅ Post feed styles injected!');
+    }
+
+    // Inject immediately and on content changes
+    document.addEventListener('DOMContentLoaded', injectPostFeedStyles);
+    setTimeout(injectPostFeedStyles, 1000);
+    setInterval(injectPostFeedStyles, 5000); // Re-inject every 5 seconds to override any dynamic loading
+  </script>
 </head>
 <body>
   <app-root></app-root>

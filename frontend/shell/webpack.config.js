@@ -2,7 +2,7 @@ const { withModuleFederationPlugin } = require('@angular-architects/module-feder
 
 module.exports = withModuleFederationPlugin({
   remotes: {
-    'userMfe': 'userMfe@http://localhost:3001/remoteEntry.js',
+    'userMfe': 'userMfe@http://localhost:4301/remoteEntry.js',
     'postMfe': 'postMfe@http://localhost:4302/remoteEntry.js',
     'feedMfe': 'feedMfe@http://localhost:3003/remoteEntry.js',
     'aiMfe': 'aiMfe@http://localhost:3004/remoteEntry.js',

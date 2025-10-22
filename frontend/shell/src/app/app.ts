@@ -1,11 +1,11 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
-import { ShellLayoutComponent } from './accordion.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ShellLayoutComponent],
-  template: `<app-shell-layout />`,
+  imports: [RouterOutlet],
+  template: `<router-outlet></router-outlet>`,
   styleUrl: './app.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,0 +1,77 @@
+LinkedIn Update Copy for Balakrishna Konduri
+
+Instructions:
+- This copy uses your company name (IPOLARITY LLC) instead of end-client names. It avoids mentioning you are currently looking for work.
+- Copy-paste each section into your LinkedIn profile: Headline, About, Experience (current role description), Skills list, Featured suggestions, and Recommendation request.
+
+Headline (pick one):
+- Tech Lead | Full‑Stack Software Engineer | Angular & React | Modular Monolith & Microfrontends | AWS (EKS, Lambda, S3)
+- Tech Lead — Modern Web & Cloud Architect | Microfrontends, Modular Monolith, System Design | AWS EKS, Lambda, DynamoDB
+
+About / Summary (long):
+Tech Lead and Full‑Stack Software Engineer with 17+ years delivering enterprise and cloud‑native solutions. I design scalable front‑end architectures (Angular, React, microfrontends) and backend systems using the Spring Framework and modular monolith patterns. At IPOLARITY LLC, I led modernization efforts to convert legacy JSP pages into Web Components and microfrontends, improving front‑end load times by 60% and enabling independent deployment cycles.
+
+I architect cloud deployments on AWS (EKS, S3, Lambda, DynamoDB), build CI/CD pipelines, and enforce code quality practices (SonarQube, code review). I’m passionate about system design, performance, accessibility (Section 508), and mentoring engineers — we increased unit test coverage from 70% to 96% and reduced time‑to‑release by moving from monthly to biweekly cycles.
+
+Open to senior engineering and technical leadership roles focused on modern web architectures, cloud native systems, and modular monolith design.
+
+About / Summary (short):
+Tech Lead & Full‑Stack Engineer (17+ yrs) — modernized legacy systems to microfrontends, architected a modular monolith on AWS EKS, and improved front‑end performance by 60%. Strong in Angular, React, Spring Framework, modular monolith, system design, and CI/CD.
+
+Current Role — Experience (copy into Experience > Description):
+IPOLARITY LLC — Tech Lead
+June 2019 – Present
+- Lead a cross‑functional team of 7 (4 developers, 2 testers, 1 BA) delivering enterprise web and cloud‑ready applications.
+- Architected and migrated legacy JSP systems to Angular and React microfrontends, enabling independent deployments and reducing release risk.
+- Architected and developed a modular monolith and REST APIs with the Spring Framework; containerized and deployed workloads to AWS EKS; used S3 for static asset hosting and AWS Lambda for serverless processing.
+- Improved front‑end load time by 60% by converting legacy JSP pages to Web Components and using Angular deferred loading; refactored lengthy Spring endpoints into smaller AJAX calls to parallelize loading.
+- Implemented DynamoDB for low‑latency access patterns and optimized data models for performance.
+- Implemented CI/CD pipelines (Maven/Gradle, Bamboo); decreased release cadence from monthly to biweekly and supported multiple parallel go‑lives, including third‑party vulnerability upgrades.
+- Increased unit test coverage from 70% to 96% and reduced defect turnaround times.
+- Ensured Section 508 accessibility compliance and maintained production observability with AppDynamics and Splunk.
+
+Previous Roles (condensed for LinkedIn):
+IPOLARITY LLC — Software Developer
+Feb 2017 – Jun 2019
+- Developed Java/J2EE applications and RESTful services using the Spring Framework; applied TDD and optimized Oracle PL/SQL.
+
+Computer Sciences Corporation — Professional System Analyst
+Jan 2015 – Jan 2017
+- Implemented Spring MVC applications and Jersey REST services; built batch processes and reusable utilities.
+
+DXC Technology India — Professional Application Delivery
+Jan 2011 – Dec 2014
+- Implemented Java/JSP modules; coordinated deployments and optimized DB connections.
+
+JDA Software — Software Engineer
+Feb 2008 – Dec 2010
+- Developed Servlets/JSPs and automation frameworks; participated in SDLC and QA.
+
+Top Skills (add to Skills section; prioritize top 3):
+Angular, React, Spring Framework, Modular Monolith, Microfrontends, System Design, AWS (EKS, Lambda, S3, DynamoDB), REST APIs, Oracle PL/SQL, Docker, CI/CD, SonarQube, AppDynamics, TDD, JUnit, Mockito, Sourcegraph Cody, GitHub Copilot, Agile, JIRA
+
+Featured suggestions:
+- Upload your resume PDF (final .docx saved as PDF).  
+- Short write‑up/post about the NIH modernization (1 paragraph + metrics).  
+- Any sharable architecture diagrams or slide decks.
+
+Recommendation request template:
+Hi [Name], I hope you’re doing well. I’m updating my LinkedIn profile and would value a short recommendation highlighting our work on [project/team]. Two or three lines about my leadership or technical delivery would be extremely helpful. Thank you — Balakrishna
+
+Quick LinkedIn update checklist:
+1. Edit Intro: update Headline and contact details.  
+2. Edit About: paste long or short About text.  
+3. Edit Experience: paste current role description and previous roles.  
+4. Add Skills: add top skills and pin top 3.  
+5. Add Featured: upload resume PDF and modernization post.  
+6. Request recommendations using the template above.
+
+Notes:
+- This copy intentionally references IPOLARITY LLC (your company) rather than client names.  
+- It avoids phrasing like "actively seeking" or "in market". Use the About/Headline as long-term professional branding.
+
+If you want, I can also:
+- Create the .docx and PDF in the Resumes folder for upload to Featured.  
+- Draft the short LinkedIn post announcing the modernization with suggested hashtags and post text.  
+- Produce a tailored LinkedIn headline variant for a short campaign (e.g., pivot to Cloud Architect).
+

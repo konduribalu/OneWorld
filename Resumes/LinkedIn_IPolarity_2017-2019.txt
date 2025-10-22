@@ -1,0 +1,22 @@
+LinkedIn Job Description - IPolarity LLC (Software Developer)
+Company: IPolarity LLC
+Position: Software Developer
+Duration: February 2017 - June 2019 (2 years 5 months)
+Location: Rockville, MD
+
+Job Description:
+Developed enterprise Java/J2EE applications and RESTful web services for business systems, supporting critical business processes and operational workflows.
+
+Key Responsibilities & Achievements:
+• Built robust backend services using Spring Framework and Hibernate ORM to support enterprise data management and business systems
+• Implemented Test-Driven Development (TDD) practices, improving code quality and reducing defects in production environments
+• Optimized Oracle PL/SQL procedures and database queries, enhancing system performance and data processing efficiency
+• Developed responsive web interfaces using JavaScript/jQuery and JSP technologies to improve user experience for business workflows
+• Collaborated with cross-functional teams including business analysts, testers, and subject matter experts to deliver mission-critical applications
+• Applied Agile methodologies and participated in thorough code reviews to maintain high standards and ensure application reliability
+• Contributed to system modernization initiatives while maintaining strict quality and performance requirements
+• Designed and implemented scalable solutions for high-volume data processing and reporting systems
+
+Technologies Used: Java, J2EE, Spring Framework, Hibernate, Oracle PL/SQL, JavaScript, jQuery, JSP, REST APIs, Agile/Scrum
+
+This role provided extensive experience in enterprise application development and established the foundation for my progression to Technical Lead where I now guide teams in modernizing applications and implementing scalable cloud-native architectures.
