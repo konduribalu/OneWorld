@@ -1,0 +1,56 @@
+BALAKRISHNA KONDURI
+Rockville, MD | 805-422-6147 | konduribalu@gmail.com | LinkedIn: [your-link]
+
+SUMMARY
+Tech Lead & Full-Stack Engineer with 17+ years delivering enterprise web and cloud-native systems. Skilled in system design, modular monolith, microfrontends, Angular/React, Spring Framework, AWS (EKS, S3, Lambda, DynamoDB), and CI/CD.
+
+CORE SKILLS
+Java; Java 17; JavaScript/TypeScript; Angular; React; Spring Framework; Modular Monolith; Microfrontends; AWS EKS; S3; Lambda; DynamoDB; REST; System Design; CI/CD; SonarQube; AppDynamics; Sourcegraph Cody; GitHub Copilot
+
+EXPERIENCE
+IPOLARITY LLC — Tech Lead (NIH) | Jun 2019–Present
+- Lead team of 7; migrated legacy JSP apps to Angular/React microfrontends and designed a modular monolith with Spring Framework.
+- Containerized and deployed services to AWS EKS; used S3 for static hosting and Lambda for serverless jobs.
+- Implemented DynamoDB for low-latency access; built CI/CD pipelines and enforced code quality.
+ - Improved front-end load time by 60% by converting legacy JSP pages to Web Components and using Angular deferred loading; refactored lengthy Spring endpoints into smaller AJAX calls to parallelize loading.
+ - Decreased release cadence from monthly to biweekly and supported multiple parallel go-lives for technical and functional upgrades, including third-party library vulnerability updates.
+ - Led and mentored a cross-functional team (4 developers: senior/mid/junior, 2 testers, 1 BA); participated in interviews and onboarded 6–7 new hires.
+ - Increased unit test coverage from 70% to 96% and reduced defect turnaround times; managed 6–7 active modules/projects concurrently.
+
+IPOLARITY LLC — Software Developer | Feb 2017–Jun 2019
+- Architected enterprise Java/J2EE applications and RESTful web services for business systems, leveraging Spring Framework and Hibernate ORM technologies.
+- Championed Test-Driven Development (TDD) methodologies and optimized Oracle PL/SQL procedures, achieving enhanced database performance and data integrity.
+- Engineered responsive web interfaces utilizing JavaScript/jQuery and JSP technologies, delivering superior user experience for business workflows and data management.
+- Collaborated with cross-functional teams to deliver mission-critical applications, supporting strategic business processes and enterprise data management initiatives.
+- Applied Agile development methodologies and conducted thorough code reviews, maintaining exceptional code quality standards and ensuring application reliability.
+- Designed and executed batch processing solutions for high-volume data operations and automated reporting systems, driving operational efficiency improvements.
+
+Computer Sciences Corporation — System Analyst | Jan 2015–Jan 2017
+- Architected and delivered Spring MVC applications and RESTful web services for enterprise client solutions leveraging Java ecosystem technologies.
+- Engineered automated batch processing systems and reusable utility libraries, enhancing data processing efficiency and system integration capabilities.
+- Designed database integration modules with performance-optimized SQL queries and stored procedures, achieving measurable system performance gains.
+- Partnered with business analysts and key stakeholders to elicit requirements and transform business objectives into robust technical solutions.
+- Created comprehensive reporting solutions and data analytics tools, empowering business intelligence initiatives and strategic decision-making.
+- Contributed to system architecture evaluations and maintained technical documentation standards while fostering knowledge transfer across teams.
+
+DXC Technology India — Application Delivery | Jan 2011–Dec 2014
+- Delivered Java/JSP web applications and enterprise modules for large-scale systems, supporting global client operations across multiple geographies.
+- Orchestrated application deployments across diverse environments and managed complex release cycles, ensuring seamless production system transitions.
+- Enhanced database connection pooling and query optimization strategies, significantly reducing application response times and boosting system scalability.
+- Executed comprehensive system maintenance protocols and delivered technical support for mission-critical production environments.
+- Spearheaded integration solutions connecting legacy systems with modern applications through web services and enterprise messaging frameworks.
+- Provided technical mentorship to junior developers and established code review processes, elevating coding standards and team performance metrics.
+
+JDA Software — Software Engineer | Feb 2008–Dec 2010
+- Engineered Java Servlets and JSP-based web applications for supply chain management and retail optimization platforms, supporting enterprise logistics operations.
+- Advanced test automation frameworks and quality assurance methodologies, establishing reliable software delivery pipelines and reducing defect rates.
+- Constructed data validation and processing modules for inventory management and demand forecasting systems, improving operational accuracy.
+- Collaborated closely with senior engineering teams and participated in architectural design reviews, contributing to enhanced software design patterns.
+- Crafted intuitive user interface components and workflow screens, elevating user experience for supply chain planning applications.
+- Resolved critical production incidents and implemented preventive solutions, maintaining optimal system stability and performance benchmarks.
+
+EDUCATION
+B.Tech — Kamala Institute of Technology and Sciences, JNTU Hyderabad — 2007
+
+AWARD
+2023 OD Honor Award — NIH

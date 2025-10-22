@@ -1,0 +1,87 @@
+<ng-container *ngIf="!isLoginRoute; else loginOnly">
+  <div class="shell-layout">
+    <header class="top-bar">
+      <div class="logo-and-search">
+        <div class="logo">OneWorld</div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search OneWorld..." />
+          <span class="search-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-label="Search" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="7" stroke="#888" stroke-width="2"/>
+              <line x1="14.5" y1="14.5" x2="18" y2="18" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div class="user-info" style="cursor: pointer;">
+        <div #userIconHost></div>
+      </div>
+    </header>
+    <div class="layout-row">
+      <aside class="sidebar">
+        <div class="profile-card" (click)="onSidebarProfileClick()" style="cursor: pointer;">
+          <!-- Host for the user microfrontend. If the remote is not available, the static fallback will be shown. -->
+          <div #userMfeHost class="user-mfe-host">
+            <div class="profile-avatar">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Photo" />
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">John Smith</div>
+              <div class="profile-title">Product Manager</div>
+              <div class="profile-location">New York, NY</div>
+            </div>
+          </div>
+        </div>
+        <div class="analytics-card">
+          <h3>Analytics</h3>
+          <div class="analytics-metric">
+            <span class="metric-label">Posts</span>
+            <span class="metric-value">128</span>
+          </div>
+          <div class="analytics-metric">
+            <span class="metric-label">Followers</span>
+            <span class="metric-value">2,345</span>
+          </div>
+          <div class="analytics-metric">
+            <span class="metric-label">Views</span>
+            <span class="metric-value">18,900</span>
+          </div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <!-- Dynamic MFE mount point: the shell will inject the selected micro frontend here -->
+        <div id="mfe-container" #mfeContainer class="mfe-container" aria-live="polite">
+          <!-- Remote micro frontends (post-mfe, feed-mfe, etc.) will be inserted here at runtime -->
+        </div>
+      </main>
+      <aside class="right-sidebar">
+        <div class="trending-card">
+          <h3>Trending Topics</h3>
+          <ul>
+            <li>#AI</li>
+            <li>#Jobs</li>
+            <li>#Tech</li>
+            <li>#Health</li>
+          </ul>
+        </div>
+        <div class="suggestion-card">
+          <h3>Suggestions</h3>
+          <ul>
+            <li>Connect with Jane Doe</li>
+            <li>Follow @TechGuru</li>
+            <li>Join Science Group</li>
+          </ul>
+        </div>
+        <div class="ad-card">
+          <h3>Sponsored</h3>
+          <p>Upgrade your skills with OneWorld Academy!</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loginOnly>
+  <div class="login-fullpage">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>

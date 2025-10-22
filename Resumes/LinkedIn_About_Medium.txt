@@ -1,0 +1,9 @@
+Technical Lead & Full‑Stack Engineer | Angular/React, Spring | Modular Monolith & Microfrontends | AWS EKS/Lambda/DynamoDB — reduced front‑end load time by 60% and increased unit test coverage from 70% to 96%.
+
+I’m a Technical Lead and Full‑Stack Engineer with 17+ years of experience building enterprise and cloud‑native systems. I lead cross‑functional teams with a focus on architecture, system design, release management, and developer enablement across Angular/React front‑ends and Spring‑based back‑ends. I believe great engineering is a team sport—so I lead with clarity, kindness, and accountability.
+
+I’ve guided the modernization of legacy applications into microfrontends and modular monoliths. We converted JSP pages into Web Components and implemented deferred loading strategies, improving front‑end load time by 60% and enabling independent, low‑risk deployments. I own delivery outcomes—moving releases from monthly to biweekly and coordinating parallel go‑lives when technical, functional, or security updates demand it.
+
+On the back end, I design modular monolith architectures and REST APIs with the Spring Framework and ship containerized services on AWS EKS, with S3 for static assets, Lambda for serverless tasks, and DynamoDB for low‑latency data access patterns. I care deeply about quality and operability—raising unit test coverage from 70% to 96% and strengthening observability and incident response with Dynatrace and Splunk. Accessibility and reliability matter to me because users and teammates depend on what we build.
+
+What motivates me most is growing engineers and raising the bar together—running architecture reviews, building reusable libraries, and turning hard‑won lessons into better docs and runbooks. I thrive in roles that blend hands‑on engineering with technical leadership and system design at scale.
