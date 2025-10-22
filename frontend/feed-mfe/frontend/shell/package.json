@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular-architects/module-federation": "^20.0.0",
+    "feed-mfe": "file:../.."
+  }
+}
