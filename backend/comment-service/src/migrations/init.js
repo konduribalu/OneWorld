@@ -20,7 +20,6 @@ const createCommentsTable = async () => {
 
   try {
     await pool.query(query);
-    console.log('Comments table created successfully');
   } catch (error) {
     console.error('Error creating comments table:', error);
     throw error;
@@ -30,7 +29,6 @@ const createCommentsTable = async () => {
 const runMigrations = async () => {
   try {
     await createCommentsTable();
-    console.log('All migrations completed successfully');
     process.exit(0);
   } catch (error) {
     console.error('Migration failed:', error);
